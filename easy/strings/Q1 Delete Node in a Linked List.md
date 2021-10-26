@@ -1,1 +1,1 @@
-(LINK TO QUESTION)[https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/553/]
+(Link to Question)[https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/553/]
