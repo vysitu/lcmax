@@ -55,3 +55,21 @@ Constraints:
 - 是有序的数组，所以重复的一定是挨着的
 - 重复的是挨着的，所以分两个指针，把后面遇到的重复元素跳过，把有重复的元素的第一个移动到开头就行
 - 输出是长度，改过的数组不需要输出
+
+# Python3
+```python3
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        num_len = len(nums)  #数组总长度
+        p1 = 0              #向前搜索的指针
+        p2 = 0              #指向不重复的列表的最后一位的指针
+        for p1 in range(num_len-1): 
+            p1 +=1          #从第二个元素开始
+            if nums[p1] == nums[p2]: 
+                nums[p1] = '-'  #消除所有和p2相同的元素
+            else:    #向前搜索发现不一样的元素时，移动指针，复制元素，消除前方那个元素
+                p2 = p2+1
+                nums[p2] = nums[p1] 
+                nums[p1] = '-'
+        return(p2+1)  #p2指向最后一位，是从0开始算，求长度要在此基础上+1
+```
