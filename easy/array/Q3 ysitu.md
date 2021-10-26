@@ -34,3 +34,31 @@ Follow up:
 
 Try to come up with as many solutions as you can. There are at least three different ways to solve this problem.
 Could you do it in-place with O(1) extra space?
+
+----- 
+# 解法
+- 题目要求modify the list in-situ
+- do not need to return any value
+## 方法1
+- 剪断，然后把左边的append到右边的后面
+- 利用index可以为负数的特性
+## 方法2
+- 新开一个列表，然后按照顺序把内容写进去
+
+# Python3
+## Solution 1
+```python3
+nums = nums[-1*k:][:]+nums[:-1*k][:]
+## solution 1 simplified
+nums = nums[-k:]+nums[:-k]
+```
+## Solution 2
+```python3
+    t1 = [0]*len(nums)
+    for i in range(len(nums)):
+        if i+k <len(nums):
+            t1[i+k] = nums[i]
+        else:
+            t1[i+k-len(nums)] = nums[i]
+    nums = t1.copy()
+```
