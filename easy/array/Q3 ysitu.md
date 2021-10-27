@@ -44,21 +44,46 @@ Could you do it in-place with O(1) extra space?
 - 利用index可以为负数的特性
 ## 方法2
 - 新开一个列表，然后按照顺序把内容写进去
+## 方法3
+- 用pop方法，只获取最后一个元素，然后倒序拼接到最开头
 
 # Python3
+要用nums[:] = ... 来覆盖原来的值
 ## Solution 1
 ```python3
-nums = nums[-1*k:][:]+nums[:-1*k][:]
-## solution 1 simplified
-nums = nums[-k:]+nums[:-k]
+    n = len(nums)
+    k_actual = k % n
+    nums[:] = nums[n-k_actual:]+nums[:n-k_actual]
+
+    
+Runtime: 204 ms
+Memory Usage: 25.6 MB
+runtime beats 96.48%
+memory usage beats 56.38%
 ```
 ## Solution 2
 ```python3
     t1 = [0]*len(nums)
+    k = k % len(nums)
     for i in range(len(nums)):
         if i+k <len(nums):
             t1[i+k] = nums[i]
         else:
             t1[i+k-len(nums)] = nums[i]
-    nums = t1.copy()
+    nums[:] = t1.copy()
+
+Runtime: 240 ms
+Memory Usage: 25.7 MB
+```
+
+## Solution 3
+```python3
+    k = k % len(nums)
+    nums1 = []
+    for i in range(k):
+        nums1.append(nums.pop(-1))
+    nums[:] = nums1[::-1]+nums
+
+Runtime: 216 ms
+Memory Usage: 25.6 MB
 ```

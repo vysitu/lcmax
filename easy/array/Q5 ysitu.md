@@ -29,3 +29,19 @@ Constraints:
 Each element in the array appears twice except for one element which appears only once.
 ```
 
+-----
+# 解法
+先进行排序，然后再利用相邻数值必然相同的特点，隔一个元素查一次，线性的顺着列表查下去。一旦出现相邻元素不一样的，那就必然是有问题的
+
+## Python3
+```python3
+    nums.sort()
+    for i in range(0,len(nums),2):  # sorted list, same values should be next to each other
+        if i+1 ==len(nums):  # already the last element, must be the single one
+            return(nums[i])
+        if nums[i+1] != nums[i]: #the next element is not the same
+            return(nums[i])
+
+Runtime: 132 ms         (78.07%)
+Memory Usage: 16.6 MB   (86.00%)
+```

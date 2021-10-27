@@ -6,3 +6,6 @@
 ## 题目链接：
 https://leetcode.com/explore/interview/card/top-interview-questions-easy/
 
+## 进度
+- Oct 26: Array Q1-Q2
+- Oct 27: Array Q3-Q5
