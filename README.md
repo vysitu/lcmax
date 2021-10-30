@@ -6,4 +6,4 @@ https://leetcode.com/explore/interview/card/top-interview-questions-easy/
 
 ## Progress:
 ### Week 1: 
-1.Array->Remove Duplicates from Sorted Array/ 2.String->Reverse String/ 3.String->Reverse Integer
+1.Array->Remove Duplicates from Sorted Array/ 2.String->Reverse String/ 3.String->Reverse Integer/ 4.String->Contains Duplicates/ 5.String-> Two Sum
