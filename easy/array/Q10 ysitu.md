@@ -48,3 +48,45 @@ board.length == 9
 board[i].length == 9
 board[i][j] is a digit 1-9 or '.'.
 ```
+
+-----
+# 解法
+这个题卡了我一些时间，主要是因为不想把解法写死，然后也懒得硬写……     
+检测重复元素的方法有很多，我用的取集合，然后计算元素数量。取行、列或者方形区域的集合之后，应该是“.”（点）加上单独元素。     
+——如果没有重复，单独元素的数量加上点的数量，减去重复的一个点（集合里面也包含一个点），应该是9。      
+至于取3x3区域的值，我实验之后感觉把所有的行拼成一个列表，再按一定规律取其中的元素，就可以得到需要的slice。
+
+# Python3
+```python3
+blist = []
+shift = []
+for i in range(9):
+    blist.extend(board2[i])
+    count1 = board[i].count('.') + len(set(board[i])) - 1
+    shift.append(i*9)
+    if count1 < 9:
+        print(False)
+        break
+
+for i in range(9):
+    collist = []
+    for shiftval in shift:
+        collist.append(blist[i+shiftval])
+    count2 = collist.count('.') + len(set(collist)) - 1
+    if count2 < 9:
+        print(False)
+        break    
+
+block = [0,1,2,9,10,11,18,19,20]    #硬解，把位移量算进去
+for startpoint in [0,3,6,27,30,33,54,57,60]:
+    square = []
+    for blockpart in block:
+        square.append(blist[startpoint+blockpart])
+    count3 = square.count('.') + len(set(square)) - 1
+    if count3 < 9:
+        print(False)
+        break   
+
+Runtime: 84 ms          (99.33%)  #这个成绩我还是非常自豪的！
+Memory Usage: 14.2 MB   (89.08%)  #内存占用也小
+```
