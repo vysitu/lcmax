@@ -9,3 +9,5 @@ https://leetcode.com/explore/interview/card/top-interview-questions-easy/
 1.Array->Remove Duplicates from Sorted Array/ 2.String->Reverse String/ 3.String->Reverse Integer/ 4.String->Contains Duplicates/ 5.String-> Two Sum
 ### Week 2:
 1.Array->Single Number/ 2.Array->Intersection of Two Arrays II/ 3.Array->Plus One/ 4.Array->Best Time to Buy and Sell Stock II/ 5.Array->Move Zeros
+### Week 3:
+1.Array->Valid Sudoku/ 2.Array->Rotate Image
