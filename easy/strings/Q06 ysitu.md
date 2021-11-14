@@ -93,3 +93,45 @@ Constraints:
 0 <= s.length <= 200
 s consists of English letters (lower-case and upper-case), digits (0-9), ' ', '+', '-', and '.'.
 ```
+
+-----
+# 解法
+纯粹的暴力。但是卡了我两个小时……草
+
+# Python3
+```python3
+class Solution:
+    def myAtoi(self, s: str) -> int:
+        output = ''
+        if len(s) <1: 
+            print('len is 0')
+        for i in range(len(s)):
+            if s[i].isspace() and (len(output) == 0):
+                continue
+            elif (s[i] in ['-','+']) and (len(output) == 0):
+                output += s[i]
+            elif (s[i].isdigit()):
+                output += s[i]
+            else:
+                try:
+                    output = int(output)
+                except:
+                    return(0)
+                if (output) > (2**31-1):
+                    output = 2**31-1
+                if (output) < -1*(2**31):
+                    output = -1*2**31
+                return(output)
+        try:
+            output = int(output)
+        except:
+            return(0)
+        if (output) > (2**31-1):
+            output = 2**31-1
+        if (output) < -1*(2**31):
+            output = -1*2**31
+        return(output)
+
+Runtime: 28 ms          (95.40%)
+Memory Usage: 14.4 MB   (图上显示最大14.3 MB ……)
+```
