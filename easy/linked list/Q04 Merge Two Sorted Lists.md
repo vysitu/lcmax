@@ -8,10 +8,8 @@ Merge two sorted linked lists and return it as a sorted list. The list should be
  
 
 Example 1:
-
 (Figure 1)
 ```
-
 Input: l1 = [1,2,4], l2 = [1,3,4]
 Output: [1,1,2,3,4,4]
 ```
