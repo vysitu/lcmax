@@ -10,4 +10,5 @@ https://leetcode.com/explore/interview/card/top-interview-questions-easy/
 ### Week 2:
 1.Array->Single Number/ 2.Array->Intersection of Two Arrays II/ 3.Array->Plus One/ 4.Array->Best Time to Buy and Sell Stock II/ 5.Array->Move Zeros
 ### Week 3:
-1.Array->Valid Sudoku/ 2.Array->Rotate Image
+1.Array->Valid Sudoku/ 2.Array->Rotate Image/ 3.String->First Unique Character in a String/ 4.String->Valid Anagram/ 5.String->Valid Palindrome
+### Week 4:
