@@ -36,3 +36,65 @@ Constraints:
 ```
 1 <= n <= 30
 ```
+
+-----
+# 解法
+其实方法很简单，就是迭代，可以把函数搞个递归，也可以不搞。然后弄一个index，随着index移动的时候判断是不是和前一个元素相同，是的话就加长当前str，不是的话就把之前的str放到list里面。最后对list的每个元素求长度，取其值（比如元素的第一个char），就可以了。
+但是这题真TM把我恶心坏了，怎么debug都理不清楚。抄的网友答案。
+
+# Python3
+```python3
+class Solution:
+    def countAndSay(self, n: int) -> str:
+        if n == 1:
+            return "1"
+        seq = [1]
+        output = []
+        while n > 1:
+            temp = []
+            curr = seq[0]
+            c = 1
+            for i in range(1, len(seq)):
+                if seq[i] != curr:
+                    temp.append(c)
+                    temp.append(curr)
+                    curr = seq[i]
+                    c = 1
+                else:
+                    c += 1
+            temp.append(c)
+            temp.append(curr)
+            seq = temp
+            n -= 1
+        for i in seq:
+            output.append(str(i))
+        return ''.join(output)
+
+
+# 递归：
+class Solution:
+    l = ["1"] + [None] * 29
+    def countAndSay(self, n: int) -> str:
+        if not self.l[n-1]:
+            x = self.countAndSay(n-1)
+            count, char = 1, x[0]
+            res = []
+            for i in range(1, len(x)):
+                if x[i] != char:
+                    res.append(str(count))
+                    res.append(char)
+                    char = x[i]
+                    count = 1
+                else:
+                    count += 1
+            res.append(str(count))
+            res.append(char)
+            self.l[n-1] = "".join(res)
+        return self.l[n-1]
+```
+
+
+
+
+
+
