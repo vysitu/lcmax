@@ -67,7 +67,7 @@ def countPrimes(n: int) -> int:
             primes.append(i)
     return(primes)
 
-# 我的改良版本
+# 我的改良版本——还是不能在时限内完成
 def countPrimes(n: int) -> int:
     if n <= 2:
         return 0
