@@ -13,3 +13,5 @@ https://leetcode.com/explore/interview/card/top-interview-questions-easy/
 1.Array->Valid Sudoku/ 2.Array->Rotate Image/ 3.String->First Unique Character in a String/ 4.String->Valid Anagram/ 5.String->Valid Palindrome
 ### Week 4:
 1.Others->Number of 1 Bits/ 2.Others->Hamming Distance/ 3.Others->Missing Number / 4.Math->Power of Three/ 5.Math->Fizz Buzz
+### Week 5:
+1.Math->Count Primes
