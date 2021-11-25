@@ -33,3 +33,27 @@ Constraints:
  ```
 
 Follow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
+
+Solution:
+```
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        maxArray = currentSum = nums[0]
+        
+        for i in range(1, len(nums)):
+            currentSum = max(nums[i] + currentSum, nums[i]) 
+            maxArray = max(maxArray, currentSum)
+            
+        return maxArray
+
+O(n)
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:        
+        for i in range(1, len(nums)):
+            if nums[i-1] > 0:
+                nums[i] += nums[i-1]
+        return max(nums)
+
+O(n), Kadane's algorithm
+```
