@@ -29,3 +29,29 @@ Constraints:
 1 <= prices.length <= 105
 0 <= prices[i] <= 104
 ```
+
+Solution:
+```
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        
+        """
+        non-profit situation
+        """
+        if sorted(prices)[::-1] == prices:
+            return 0
+        
+        """
+        profit generate
+        """
+        minPrice = float('inf')
+        maxProfit = 0
+        
+        for price in prices:
+            minPrice = min(price, minPrice)
+            profit = price - minPrice
+            maxProfit = max(maxProfit, profit)
+        
+        return maxProfit
+        
+```
