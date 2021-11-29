@@ -62,4 +62,11 @@ class Solution:
 
         return maxSum
 
+# 一种变形，也可以通过：
+    def maxSubArray(self, A):
+        curSum, maxSum = 0, 1e-4
+        for num in A:
+            curSum = max(num, curSum + num)
+            maxSum = max(maxSum, curSum)
+        return maxSum
 ```
