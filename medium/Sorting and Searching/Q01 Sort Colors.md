@@ -40,3 +40,62 @@ nums[i] is 0, 1, or 2.
  ```
 
 Follow up: Could you come up with a one-pass algorithm using only constant extra space?
+
+-----
+# 解法
+in-place操作，对于这种只有3种类型的列表很简单，只要一种往前移，一种往后移，剩下一种原地不动就行。
+
+# Python3
+```python3
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        if len(nums) ==1:
+            return(nums)
+        ind = 0
+        opcount = 0
+        while True:
+            x = nums.pop(ind)
+            if x == 0:
+                nums.insert(0,x)
+                ind += 1
+            elif x == 2:
+                nums.append(x)  # 原来的元素移到末尾了，所以本index指向的已经是下一个元素了
+            else:
+                nums.insert(ind, x)
+                ind += 1
+            if ind == len(nums):
+                break
+            opcount += 1 
+            if opcount > len(nums):   #防止最后在一串2上面不停的循环
+                break
+        return(nums)
+
+Runtime: 28 ms          (92.04%)
+Memory Usage: 14.3 MB
+
+
+# 还有一招比较血腥的办法，也只遍历一次，然后直接用新数组覆盖原来的。
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        count0 = 0
+        count1 = 0
+        count2 = 0
+        for x in nums:
+            if x == 0:
+                count0 += 1
+            elif x == 1:
+                count1 += 1
+            else:
+                count2 += 1
+        nums[:] = count0*[0]+count1*[1]+count2*[2]
+        return(nums)
+
+Runtime: 32 ms          (76.58%)
+Memory Usage: 14.2 MB   (75.88%)
+```
