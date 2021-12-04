@@ -15,3 +15,5 @@ https://leetcode.com/explore/interview/card/top-interview-questions-easy/
 1.Others->Number of 1 Bits/ 2.Others->Hamming Distance/ 3.Others->Missing Number / 4.Math->Power of Three/ 5.Math->Fizz Buzz
 ### Week 5:
 1.Math->Count Primes/ 2.Dynamic->Climbing Stairs/ 3.Dynamic->Maximum SubArray/ 4.Dynamic->Best Time to Buy and Sell Stock/ 5.Math->Roman to Integer
+### Week 6:
+1.DP->House Robber/ 2.Sorting and Searching->Merge Sorted Array/ 3.Sorting and Searching->First Bad Version

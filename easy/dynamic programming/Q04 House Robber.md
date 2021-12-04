@@ -28,3 +28,28 @@ Constraints:
 1 <= nums.length <= 100
 0 <= nums[i] <= 400
 ```
+
+Solution:
+```
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        N = len(nums)
+        
+        if N == 0:
+            return 0
+        if N == 1:
+            return nums[0]
+        
+        dynamicP = [0] * N
+        dynamicP[0] = nums[0]
+        dynamicP[1] = max(nums[0], nums[1])
+        
+        for i in range(2, N):
+            dynamicP[i] = max(dynamicP[i - 1], dynamicP[i - 2] + nums[i])
+            
+        return dynamicP[-1]
+
+Runtime: 32 ms
+Memory Usage: 14.3 MB
+```
+

@@ -41,3 +41,31 @@ nums2.length == n
  ```
 
 Follow up: Can you come up with an algorithm that runs in O(m + n) time?
+
+Solutions:
+```
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        for i in range(n):
+            nums1[m] = nums2[i]
+            m += 1
+        
+        nums1[:] = sorted(nums1)
+
+Runtime: 36 ms
+Memory Usage: 14.3 MB
+
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        nums1[m:] = nums2[:n]
+        nums1.sort()
+
+Runtime: 28 ms
+Memory Usage: 14.4 MB
+```
