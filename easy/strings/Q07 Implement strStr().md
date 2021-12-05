@@ -35,3 +35,21 @@ Constraints:
 0 <= haystack.length, needle.length <= 5 * 104
 haystack and needle consist of only lower-case English characters.
 ```
+
+Solutions:
+```
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        if len(needle) == 0:
+            return 0
+    
+    
+        if needle not in haystack:
+            return -1
+        
+        return haystack.index(needle)
+        #return haystack.find(needle) 意思差不多。index稍微快一点。
+
+Runtime: 20 ms
+Memory Usage: 14.2 MB
+```
