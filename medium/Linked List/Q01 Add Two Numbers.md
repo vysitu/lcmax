@@ -1,4 +1,4 @@
-[Link to List](https://leetcode.com/explore/interview/card/top-interview-questions-medium/107/linked-list/783/)
+[Link to Question](https://leetcode.com/explore/interview/card/top-interview-questions-medium/107/linked-list/783/)
 
 
 
