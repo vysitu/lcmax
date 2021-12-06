@@ -25,3 +25,16 @@ Constraints:
 1 <= k <= nums.length <= 104
 -104 <= nums[i] <= 104
 ```
+
+-----
+# 解法
+本来做完Q02就可以了，手贱点进来，发现这题直接用sort不就能搞定了……
+可能其他语言要从头实现一个排序吧。
+
+# Python3
+```python
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        nums.sort()
+        return(nums[::-1][k-1])
+```
