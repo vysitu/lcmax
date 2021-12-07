@@ -25,3 +25,26 @@ Constraints:
 0 <= strs[i].length <= 200
 strs[i] consists of only lower-case English letters.
 ```
+
+
+Solutions:
+```
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        if len(strs) == 1:
+            return strs[0]
+        
+        res = ''
+        n = len(min(strs))
+        
+        for i in range(n):
+            for j in range(len(strs) - 1):
+                if strs[j][i] != strs[j + 1][i]:
+                    return res
+            res += strs[j][i]
+            
+        return res
+
+Runtime: 28 ms
+Memory Usage: 14.4 MB
+```

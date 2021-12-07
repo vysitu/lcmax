@@ -17,3 +17,5 @@ https://leetcode.com/explore/interview/card/top-interview-questions-easy/
 1.Math->Count Primes/ 2.Dynamic->Climbing Stairs/ 3.Dynamic->Maximum SubArray/ 4.Dynamic->Best Time to Buy and Sell Stock/ 5.Math->Roman to Integer
 ### Week 6:
 1.DP->House Robber/ 2.Sorting and Searching->Merge Sorted Array/ 3.Sorting and Searching->First Bad Version/ 4.Other->Valid Parentheses/ 5.Sting->Implement strStr()
+### Week 7:
+1.String->Longest Common Prefix
