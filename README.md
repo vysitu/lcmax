@@ -18,4 +18,4 @@ https://leetcode.com/explore/interview/card/top-interview-questions-easy/
 ### Week 6:
 1.DP->House Robber/ 2.Sorting and Searching->Merge Sorted Array/ 3.Sorting and Searching->First Bad Version/ 4.Other->Valid Parentheses/ 5.Sting->Implement strStr()
 ### Week 7:
-1.String->Longest Common Prefix
+1.String->Longest Common Prefix/ 2.Math->Happy Number
