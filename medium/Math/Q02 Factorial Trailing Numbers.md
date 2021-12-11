@@ -33,3 +33,27 @@ Constraints:
  ```
 
 Follow up: Could you write a solution that works in logarithmic time complexity?
+
+Constraints:
+```
+自制解法献丑了，强行算。
+class Solution:
+    def trailingZeroes(self, n: int) -> int:
+        if n == 0:
+            return 0 
+            
+        res = 1
+        for i in range(1, n + 1):
+            res *= i
+
+        temp = str(res)
+        count = 0
+        
+        while temp[-1] == '0':
+            count += 1
+            temp = temp[:-1]
+
+        return count
+
+
+```
