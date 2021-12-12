@@ -30,3 +30,25 @@ Constraints:
 -231 <= n <= 231-1
 -104 <= xn <= 104
 ```
+
+Solutions:
+```
+“递龟”
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        
+        def recursion(base = x, y = abs(n)):
+            if y == 0:
+                return 1
+            elif y % 2 == 0:
+                return recursion(base * base, y // 2)
+            else:
+                return base * recursion(base * base, (y - 1) // 2)
+            
+        if n >= 0:
+            return float(recursion())
+        else:
+            return 1/recursion()
+Runtime: 32 ms
+Memory Usage: 14.3 MB
+```

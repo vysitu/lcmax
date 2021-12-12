@@ -44,3 +44,20 @@ Constraints:
 columnTitle consists only of uppercase English letters.
 columnTitle is in the range ["A", "FXSHRXW"].
 ```
+
+Solutions:
+```
+class Solution:
+    def titleToNumber(self, columnTitle: str) -> int:
+        n = len(columnTitle)
+        res = 0
+        
+        for i in range(n):
+            res *= 26
+            res += (ord(columnTitle[i]) - ord('A') + 1)
+            
+        return res
+        
+Runtime: 32 ms
+Memory Usage: 14 MB
+```

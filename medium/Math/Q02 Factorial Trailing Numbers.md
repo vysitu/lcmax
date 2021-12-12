@@ -36,7 +36,7 @@ Follow up: Could you write a solution that works in logarithmic time complexity?
 
 Constraints:
 ```
-自制解法献丑了，强行算。
+自制解法献丑了，强行算。二刷再考虑优化的问题了
 class Solution:
     def trailingZeroes(self, n: int) -> int:
         if n == 0:
@@ -54,6 +54,4 @@ class Solution:
             temp = temp[:-1]
 
         return count
-
-
 ```
