@@ -51,4 +51,9 @@ class Solution:
             return 1/recursion()
 Runtime: 32 ms
 Memory Usage: 14.3 MB
+
+以下是Python自带构建pow，抄司徒的
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        return x ** n
 ```
