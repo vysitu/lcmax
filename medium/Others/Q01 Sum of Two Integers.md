@@ -25,6 +25,7 @@ Constraints:
 
 Solutions:
 ```
+出题者看到了想打人
 class Solution:
     def getSum(self, a: int, b: int) -> int:
         return sum([a,b])
