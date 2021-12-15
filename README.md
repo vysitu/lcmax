@@ -19,3 +19,5 @@ https://leetcode.com/explore/interview/card/top-interview-questions-easy/
 1.DP->House Robber/ 2.Sorting and Searching->Merge Sorted Array/ 3.Sorting and Searching->First Bad Version/ 4.Other->Valid Parentheses/ 5.Sting->Implement strStr()
 ### Week 7:
 1.String->Longest Common Prefix/ 2.Math->Happy Number/ 3.Math->Factorial Trailing Zeroes/ 4.Math->Excel Sheet Col Number/ 5.Math->Pow(x, n)
+### Week 8:
+1.Math->Sqrt(x)/ 2.Others->Sum of Two Integers

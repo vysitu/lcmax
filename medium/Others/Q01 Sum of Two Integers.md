@@ -22,3 +22,10 @@ Constraints:
 ```
 -1000 <= a, b <= 1000
 ```
+
+Solutions:
+```
+class Solution:
+    def getSum(self, a: int, b: int) -> int:
+        return sum([a,b])
+```

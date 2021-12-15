@@ -21,9 +21,26 @@ Example 2:
 Input: x = 8
 Output: 2
 Explanation: The square root of 8 is 2.82842..., and since the decimal part is truncated, 2 is returned.
- ```
+```
 
 Constraints:
 ```
 0 <= x <= 231 - 1
+```
+
+Solutions:
+```
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        if x < 0 or x > pow(2, 31) - 1:
+            return False
+        
+        if x < 2:
+            return x
+        
+        left = int(e**(0.5 * log(x)))
+        
+        right = left + 1 
+        
+        return left if right * right > x else right
 ```
