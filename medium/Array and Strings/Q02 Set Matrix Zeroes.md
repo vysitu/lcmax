@@ -35,3 +35,32 @@ Follow up:
 A straightforward solution using O(mn) space is probably a bad idea.
 A simple improvement uses O(m + n) space, but still not the best solution.
 Could you devise a constant space solution?
+
+-----
+# 解法
+我这个解法应该算是O(m+n)的？
+
+我只需要一个列表来储存所有行里出现过0的index。第一次循环，获得0的index并且把出现过0的行设置为全0；第二次循环是一个嵌套循环，把每一行里的index依次设置为0。
+
+# Python3
+```python
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        rownum = len(matrix)    #num of rows
+        colnum = len(matrix[0]) #num of cols
+        col_zero = []
+        for row_ind, row in enumerate(matrix):
+            if 0 in row:
+                col_zero.extend([ind for ind, x in enumerate(row) if x == 0])  #record all 0s
+                matrix[row_ind] = [0] * colnum  #set the whole row to 0
+        col_zero = list(set(col_zero))
+        for row_ind, row in enumerate(matrix):
+            for col_ind in col_zero:
+                matrix[row_ind][col_ind] = 0
+# 耗时和其他答案比挺多的，但是其他答案我看还没有我这个直观，而且循环次数巨TM多。
+Runtime: 231 ms         (5.77%)
+Memory Usage: 15.1 MB   (46.98%)
+```

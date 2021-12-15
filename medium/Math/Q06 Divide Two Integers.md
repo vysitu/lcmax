@@ -41,3 +41,35 @@ Constraints:
 -231 <= dividend, divisor <= 231 - 1
 divisor != 0
 ```
+
+-----
+# 解法
+用暴力直接一个个的加上去会TLE（Time Limit Exceeded）。
+
+看了网友的答案，确实用到了指数增加推测值来节约时间的方法，但是看了网友的设计，真TM的妙啊
+
+草
+
+# Python3
+```python
+class Solution:
+    def divide(self, dividend: int, divisor: int) -> int:
+        # 同符号，if的括号得到的是True，sign就是1
+        # 符号相反，if得到的False，最终得到-1
+        sign = 1 if ((dividend > 0) is (divisor > 0)) else -1 
+        divisor, dividend = abs(divisor), abs(dividend)  # 取绝对值再计算
+        output = 0
+        while dividend >= divisor:    # 除数大于被除数就输出0了
+            temp = divisor            # 
+            shift = 1                 # 
+            while dividend >= temp:   # 
+                dividend -= temp      # 被除数减去temp
+                temp <<= 1            # 左移一位就是乘以2，两位就是乘以2的2次方
+                output += shift       # 偏移量其实就是除的部分结果
+                shift <<= 1           # 增加偏移量，如果temp偏移过头，无法计算
+        result = output * sign        # 乘以符号得到结果，之后判断范围
+        result = result if result < 2**31-1 else 2**31-1
+        result = result if result > -1*(2**31) else -1*(2**31)
+        return(result)
+
+```
