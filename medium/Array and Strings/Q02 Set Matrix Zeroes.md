@@ -35,3 +35,34 @@ Follow up:
 A straightforward solution using O(mn) space is probably a bad idea.
 A simple improvement uses O(m + n) space, but still not the best solution.
 Could you devise a constant space solution?
+
+
+Solutions:
+```
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        index_row = []
+        index_col = []
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                if matrix[i][j] == 0:
+                    index_row.append(i)
+                    index_col.append(j)
+        
+        unique_row = set(index_row)
+        unique_col = set(index_col)
+        
+        for row in unique_row:
+            for j in range(len(matrix[0])):
+                matrix[row][j] = 0
+                
+        for i in range(len(matrix)):
+            for col in unique_col:
+                matrix[i][col] = 0
+
+time: O(M x N)
+space: O(M + N)
+```
