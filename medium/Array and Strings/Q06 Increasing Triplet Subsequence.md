@@ -33,3 +33,26 @@ Constraints:
  ```
 
 Follow up: Could you implement a solution that runs in O(n) time complexity and O(1) space complexity?
+
+Solutions:
+```
+class Solution:
+    def increasingTriplet(self, nums: List[int]) -> bool:
+        first_small = float("inf")
+        second_small = float("inf")
+        
+        for n in nums:
+            if n <= first_small:
+                first_small = n
+            elif n <= second_small and n > first_small:
+                second_small = n
+            else:
+                return True
+            
+        return False
+
+O(n)
+
+Runtime: 560 ms
+Memory Usage: 25.3 MB
+```
