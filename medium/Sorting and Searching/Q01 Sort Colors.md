@@ -40,3 +40,33 @@ nums[i] is 0, 1, or 2.
  ```
 
 Follow up: Could you come up with a one-pass algorithm using only constant extra space?
+
+Solution:
+```
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        count = [0] * 3
+        
+        for i in nums:
+            if i == 0:
+                count[0] += 1
+            elif i == 1:
+                count[1] += 1
+            else:
+                count[2] += 1
+        
+        base = 0
+        index = 0
+        for i in count:
+            while i != 0:
+                nums[index] = base
+                i -= 1
+                index +=1
+            base += 1
+
+Runtime: 28 ms
+Memory Usage: 14.1 MB
+ ```
