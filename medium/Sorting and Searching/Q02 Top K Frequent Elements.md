@@ -26,3 +26,28 @@ It is guaranteed that the answer is unique.
  ```
 
 Follow up: Your algorithm's time complexity must be better than O(n log n), where n is the array's size.
+
+
+Solutions:
+```
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        res = [] 
+        dic = dict()
+            
+        for num in nums:
+            if num not in dic:
+                dic[num] = 1
+            else:
+                dic[num] +=1
+            
+        collection = sorted(dic.items(), key=lambda x: x[1], reverse = True)
+        
+        for i in range(k):
+            res.append(collection[i][0])
+            
+        return res
+        
+Runtime: 104 ms
+Memory Usage: 18.7 MB
+```
