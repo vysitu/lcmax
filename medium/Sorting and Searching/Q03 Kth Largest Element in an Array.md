@@ -25,3 +25,14 @@ Constraints:
 1 <= k <= nums.length <= 104
 -104 <= nums[i] <= 104
 ```
+
+Solutions:
+```
+不明白考点是什么，题目也没说不能使用内建函数
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        nums.sort()
+        return nums[-k]
+Runtime: 56 ms
+Memory Usage: 15.2 MB
+```
