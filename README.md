@@ -24,3 +24,4 @@ https://leetcode.com/explore/interview/card/top-interview-questions-easy/
 ### Week 9:
 1.Sorting and Searching->Sort Colors/ 2.Sorting and Searching->Top K Frequent Elements/ 3.Sorting and Searching->Kth Largest Element in an Array/ 4.Sorting and Searching->Find Peak Element/ 5.Sorting and Searching->Find First and Last Position of Element in Sorted Array (Search for a Range)
 ### Week 10:
+This is a holiday week, sry bro 
