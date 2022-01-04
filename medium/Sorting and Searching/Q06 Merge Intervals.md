@@ -26,3 +26,32 @@ Constraints:
 intervals[i].length == 2
 0 <= starti <= endi <= 104
 ```
+Solitions:
+```
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        intervals.sort()
+        
+        res = []
+        temp = intervals[0]
+        
+        for i in range(len(intervals) - 1):
+            
+            if temp[1] >= intervals[i + 1][0]:
+                if temp[1] <= intervals[i + 1][1]:
+                    temp[1] = intervals[i + 1][1]
+                else:
+                    continue
+                
+            else:
+                res.append(temp)
+                temp = intervals[i + 1]
+                
+        res.append(temp)
+                
+        return res
+
+Runtime: 140 ms
+Memory Usage: 18.2 MB
+献丑了。。。
+```
