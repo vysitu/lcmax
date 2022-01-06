@@ -26,4 +26,4 @@ https://leetcode.com/explore/interview/card/top-interview-questions-easy/
 ### Week 10:
 This is a holiday week, sry bro 
 ### Week 11:
-1.Sorting and Searching->Merge Intervals
+1.Sorting and Searching->Merge Intervals/ 2.Sorting and Searching->Search in Rotated Sorted Array/ 3.Sorting and Searching->Meeting Rooms/ 4.DP->Jump Game

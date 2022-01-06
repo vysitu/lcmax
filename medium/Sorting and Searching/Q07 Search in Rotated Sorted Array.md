@@ -37,3 +37,18 @@ All values of nums are unique.
 nums is an ascending array that is possibly rotated.
 -104 <= target <= 104
 ```
+
+
+Solutions:
+```
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        if target in nums:
+            return nums.index(target)
+        else:
+            return -1
+题目有点莫名其妙
+脑子里第一出来的就是这个想法
+肯定不是O(logn)哈 
+唉，第一次碰到这题， 放过我吧
+```

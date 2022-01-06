@@ -27,3 +27,20 @@ Constraints:
 1 <= nums.length <= 104
 0 <= nums[i] <= 105
 ```
+
+Solution:
+```
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        if len(nums) == 1: return True
+        
+        steps = 0 
+        position = 0
+        
+        while position <= steps:
+            steps = max(position + nums[position], steps)
+            if steps >= len(nums) - 1: return True
+            position += 1
+            
+        return False
+```
