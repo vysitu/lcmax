@@ -33,3 +33,35 @@ Constraints:
 The number of nodes in the tree is in the range [0, 104].
 -100 <= Node.val <= 100
 ```
+
+Solutions:
+```
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+        
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        
+        depth = 0
+        level = [root] if root else []
+        
+        while level:
+            queue = []
+            depth += 1
+            
+            for el in level:
+                if el.left:
+                    queue.append(el.left)
+                if el.right:
+                    queue.append(el.right)
+                    
+            level = queue
+            
+        return depth
+
+#BFS 
+```
