@@ -29,3 +29,5 @@ This is a holiday week, sry bro
 1.Sorting and Searching->Merge Intervals/ 2.Sorting and Searching->Search in Rotated Sorted Array/ 3.Sorting and Searching->Meeting Rooms/ 4.DP->Jump Game/ 5.Design->Shuffle an Array
 ### Week 12:
 1.Linked List->Delete Node in a Linked List/ 2.Design->Min Stack/ 3.Tree->Maximum Depth of Binary Tree
+### Week 13
+1.Tree->Validate Binary Search Tree
