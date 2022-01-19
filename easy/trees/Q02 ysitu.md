@@ -35,13 +35,13 @@ The number of nodes in the tree is in the range [1, 104].
 抄的网友答案。后面我都懒得写这句了，凡是树形结构的都是先看网友答案的。
 - 有几种方法可以处理这类问题：Inorder Traversal, Pre-order Traversal, Post-order Traversal。
 - BST(Binary Search Tree) 有一个特点就是，如果把它严格按照左-中-右的顺序拼接，那么可以看出是一定左<中<右的，或者说：
-
+```
         1中    
       /     \    
     2左       2中    
   /    \     /   \    
 3左1   3左2 3右1   3右2    
-
+```
 - 因为BST的每个分支也是BST，那么2左<1中<2右，而3左2=不一定=小于1中
 
 
