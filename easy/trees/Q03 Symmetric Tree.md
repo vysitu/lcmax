@@ -49,16 +49,16 @@ class Solution:
   def isSymmetric(self, root):
       if root is None:
           return True
-      stack = [(root.left, root.right)]
+      stack = [(root.left, root.right)]  #同时探索左边分枝和右边分枝
       while stack:
           left, right = stack.pop()
-          if left is None and right is None:
+          if left is None and right is None: #两边都到头了
               continue
-          if left is None or right is None:
+          if left is None or right is None:  #有一侧先到头了
               return False
           if left.val == right.val:
-              stack.append((left.left, right.right))
-              stack.append((left.right, right.left))
+              stack.append((left.left, right.right))  #对称的添加
+              stack.append((left.right, right.left))  #对称的添加
           else:
               return False
       return True
