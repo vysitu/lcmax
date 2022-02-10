@@ -32,4 +32,4 @@ This is a holiday week, sry bro
 ### Week 13:
 1.Tree->Validate Binary Search Tree/ 2.Tree->Symmetric Tree/ 3.Tree->Binary Tree Level Order Traversal
 ### Week 14:
-1.Tree->Convert Sorted Array to Binary Search Tree/ 2.String->Find the Difference/ 3.String->Add Digits
+1.Tree->Convert Sorted Array to Binary Search Tree/ 2.String->Find the Difference/ 3.String->Add Digits/ 4.Array->Subarray Sum Equals K
