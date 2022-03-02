@@ -39,5 +39,31 @@ s consists of English letters, digits, symbols and spaces.
 ```
 -----
 # 思路
-双指针法。移动靠前的指针，如果出现重复的，就把重复的那个位置变成靠后的指针的位置，并且记录最新的字符串长度。
+双指针法。移动靠前的指针，如果出现重复的，就把靠后的指针向前移动，直到没有重复为止，并且记录最新的字符串长度。
+
+# Python
+```python
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        if len(s) == 0:
+            return(0)
+        prev = curr = 0
+        thestr = ''
+        strlen = 0
+        while curr <= len(s) - 1:
+            if s[curr] in thestr:
+                prev += 1
+                strlen = max(len(thestr), strlen)
+                thestr = s[prev:curr]
+            else:
+                thestr = thestr + s[curr]
+                curr += 1
+            # print(thestr)
+            # print(strlen)
+        strlen = max(len(thestr), strlen)
+        return(strlen)
+```
+Runtime: 85 ms          63%
+Memory Usage: 14.1 MB   74%
+
 
