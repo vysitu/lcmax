@@ -53,6 +53,15 @@ The integer n is in the range [0, 100].
 
 我用的是比较传统的思路，创建字典让两条记录跟着任务走。
 
+这个方法需要注意的东西：
+1. 每一轮都要减少所有任务的CD，并且注意不要出现负值
+2. 如果全部CD都不是0，那么就进入idle状态
+3. 重点：每一轮都要从CD最少的那些元素（都是0）里面选数量最多的那个元素，优先把数量多的任务做掉。
+4. 因为全部CD都不是0就会进入idle状态，所以第三点里面CD最少的元素其CD肯定是0，不需要额外判断。
+5. 一个任务类型全部完成之后就从三个列表中都把这个任务对应的数据删掉
+
+优化成全部列表操作可能会稍微快些。
+
 # Python3
 ```python3
 def tasker2(tasks, n):
@@ -75,8 +84,9 @@ def tasker2(tasks, n):
     
     while max(task_dict['count'])>0:
         count += 1
-        print(f'step {count}')
-        print(task_dict)
+        # print(f'step {count}')
+        # print(task_dict)
+
         # 全体 cd减少1 ，如果全部都在CD，跳过后面步骤并且记录'idle'状态
         new_cd_list = []
         for cd in task_dict['cd']:
@@ -109,4 +119,6 @@ def tasker2(tasks, n):
             break
         
     return len(output)
+
+速度很慢（3300+ms），占用内存15.5MB（16%）
 ```
